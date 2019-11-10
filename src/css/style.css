@@ -1,0 +1,266 @@
+@font-face{
+    font-family: "Muller";
+        src: url("../font/Fontfabric\ -\ MullerMedium.otf")
+}
+@font-face{
+    font-family: "TTCommons";
+        src: url("../font/TTCommons-Bold.ttf")
+}
+
+
+* , *:before, *:after{ 
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    -webkit-box-sizing:border-box; 
+    -ms-box-sizing:border-box;
+  }
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.badge-carcass{
+    max-width: 794px;
+    padding: 47px 78px 0px 35px;
+    height: 650px;
+    font: 14px "Roboto", sans-serif;
+}
+
+.badge__header_head{
+    font-size: 24px;
+    font-weight: 600;
+}
+.badge__header_descr{
+    margin-top: 21px;
+    max-width: 413px;
+    line-height: 16px;
+}
+
+.badge__header_descr span{
+    color: red;
+}
+
+.badge-carcass__container{
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.creation_container{
+    max-width: 320px;
+
+
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+}
+
+.creation_container label{
+    font-size: 10px;
+    line-height: 12px;
+    color: #BDBDBD;
+    padding: 10px 0 0 11px;
+}
+
+.creation_name input{
+    padding: 3px 0 10px 11px;
+    border: none;
+    font: 14px "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: #4F4F4F;
+    display: block;
+}
+
+.creation_select{
+    padding: 3px 0 10px 11px;
+    border: none;
+    font: 14px "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: black;
+    -webkit-appearance: none;
+    color: #4F4F4F;
+    width: 100%;
+}
+
+.creation_select option{
+    background: #F2F2F2;
+    padding: 10px;
+}
+
+.passive-down{
+    background: url("../img/Vector-down.svg") no-repeat 95% 5px;
+}
+.active-up{
+    background: url("../img/Vector-up.svg") no-repeat 95% 5px;
+}
+
+.creation_post{
+    margin-top: 37px;
+}
+
+
+.creation_brand{
+    margin-top: 37px;
+    display: none;
+}
+
+.creation_warn{
+    max-width: 310px;
+    margin-top: 29px;
+}
+
+.creation_warn-header{
+    font-weight: 600;
+}
+
+.creation_warn-exception{
+    margin-top: 25px;
+}
+
+.creation_warn-exception span{
+    color: #159915;
+}
+
+.result_badge{
+    width: 297px;
+    padding: 19.51px 0 0 19.31px;
+    border: 0.25px solid #F2F2F2;
+    border-bottom: 7.89px solid #E10718;    
+}
+
+.result_brand-logo{
+    background: url(../img/05.svg) no-repeat center;
+    background-size: contain;
+    width: 46.23px;
+    height: 30px;
+    display: inline-block;
+}
+
+.result_badge-custom{
+    margin-top: 26.38px;
+}
+
+.result_badge-custom-post{
+    font-family: Muller;
+    font-size: 14px;
+}
+
+.result_badge-custom-name{
+    font-family: TTCommons;
+    font-size: 48px;
+    line-height: 55px;
+    margin-top: 4.08px;
+}
+
+
+.result_badge-action{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+
+.result_badge-action button{
+    width: 137px;
+    padding: 9px 0 10px 0;
+    opacity: .5;
+    font-size: 13px;
+}
+.download{
+    border: 1px solid #E5E5E5;
+}
+
+.print{
+    color: white;
+    background: #46CD80;
+}
+
+
+/* print instance styles */
+
+.print-carcass{
+    /* padding: 47px 0 43px 35px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font: 14px "Roboto", sans-serif;
+    display: none;
+}
+
+.print-carcass__overview{
+    padding: 47px 0 0 35px;
+}
+
+.print-carcass__header h1{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.print-carcass__header_rule{
+    font-size: 13px;
+    margin-top: 21px;
+    max-width: 345px;
+}
+
+.print-preview{
+    margin: 37px 0 38px 0 ;
+}
+
+.print-preview__item{
+    margin-bottom: 18px;
+}
+
+
+.print-carcass__footer{
+    flex-grow: 1;
+    background: #F2F2F2;
+    padding: 33px 0 42px 35px;
+}
+
+.print-carcass__footer_loss h1{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.print-carcass__footer_loss-guide{
+    margin-top: 10px;
+    font-size: 13px;
+    max-width: 523px;
+} 
+
+.print-carcass__footer_cheat{
+    margin-top: 32px;
+}
+
+.print-carcass__footer_cheat h1{
+    font-size: 18px;
+    font-weight: 600;;
+}
+
+.print-carcass__footer_cheat-guide{
+    margin-top: 10px;
+    font-size: 13px;
+    max-width: 513px;
+}
+
+.print-carcass__footer_cheat span{
+    display: inline-block;
+    margin-top: 42px;
+}
+
+
+@media print { /* Стиль для печати */
+    /* body{
+      visibility: hidden;
+    } */
+    .badge-carcass{
+        display: none;
+    }
+    /* Блок который нужно отобразить */
+    .print-carcass {
+        display: flex;
+        visibility: visible;
+     }
+     }

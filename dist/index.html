@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="badge-carcass">
+         <div class="badge-carcass__header">
+             <h1 class="badge__header_head">Создаем бэйджик</h1>
+             <p class="badge__header_descr">Указывайте настоящие данные. И не теряйте свои держатели. 
+                 В случае нарушения требований <span> будет выписан штраф</span></p>
+         </div>
+         <div class="badge-carcass__container container">
+             <div class="creation">
+                <div class="creation_name creation_container">
+                    <input type="text" name="person-name" class="print-name" placeholder="Солнце">
+                </div>
+                <div class="creation_name-error">
+                    <span></span>
+                    <div>Имя не помещается в бэйджик</div>
+                </div>
+                <div class="creation_post creation_container">
+                    <select class= " creation_select post-changer passive-down" name="" id="">
+                        <option value="Выберите из списка">Выберите из списка</option>
+                        <option value="Менеджер">Менеджер</option>
+                        <option value="Кассир">Кассир</option>
+                        <option value="Мерчендайзер">Мерчендайзер</option>
+                        <option value="Эксперт">Эксперт</option>
+                    </select>
+                </div>
+                <div class="creation_brand creation_container ">
+                        <select class="creation_select brand-changer passive-down" name="" id="">
+                            <option value="Выберите из списка">Выберите из списка</option>
+                            <option value="Dyson">Dyson</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="LG">LG</option>
+                            <option value="Oppo">Oppo</option>
+                            <option value="Phillips">Phillips</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Sony">Sony</option>
+                            
+                        </select>
+                    </div>
+                <div class="creation_warn">
+                    <p class="creation_warn-header"> Не забудьте перепроверить данные!</p>
+                    <p class="creation_warn-exception">
+                     Если ваш ПК не подключен ни к одному из принтеров, 
+                     то попробуйте скачать бэйджик, попросите и передайте кому-нибудь на печать. 
+                    Обязательно <span> на цветном принтере! </span>
+                    </p>
+                </div>
+             </div>
+             <div class="result">
+                <div class="result_badge">
+                    <div class="result_brand-logo"></div>
+                    <div class="result_badge-custom">
+                        <div class="result_badge-custom-post">Должность</div>
+                        <div class="result_badge-custom-name">Солнце</div>
+                    </div>                   
+                </div>
+                <div class="result_badge-action">
+                        <button class="download" disabled="disabled" >Скачать</button>
+                        <button class="print" disabled="disabled" >Напечатать</button>
+                    </div>
+             </div>
+         </div>
+    </div>
+    <div class="print-carcass">
+            <div class="print-carcass__overview">
+                <div class="print-carcass__header">
+                    <h1>Ваш бэйджик готов!</h1>
+                    <p class="print-carcass__header_rule">Осталось только разрезать его и вставить
+                        в держатель. Используйте для этого резак.
+                    </p>
+                </div>
+    
+                <div class="print-preview">
+                    <div class="result_badge  print-preview__item">
+                            <div class="result_brand-logo"></div>
+                            <div class="print-preview_badge-custom">
+                                <div class="print-preview_custom-post">Должность</div>
+                                <div class="print-preview_custom-name">Солнце</div>
+                            </div>                   
+                    </div>
+                    <div class="print-preview_additional">
+                        <div class="print-preview_badges-add">
+                            <div class="result_badge ">
+                                    <div class="result_brand-logo"></div>
+                                    <div class="print-preview_badge-custom">
+                                        <div class="print-preview_custom-post">Должность</div>
+                                        <div class="print-preview_custom-name">Солнце</div>
+                                    </div>                   
+                                </div>
+            
+                            <div class="result_badge ">
+                                    <div class="result_brand-logo"></div>
+                                    <div class="print-preview_badge-custom">
+                                        <div class="print-preview_custom-post">Должность</div>
+                                        <div class="print-preview_custom-name">Солнце</div>
+                                    </div>                   
+                                </div>
+                        </div>
+                        <div class="print-preview_additional-second">
+                            <h1>+ 2 дополнительных</h1>
+                            <p class="print-preview_additional-second-warn">на всякий-всякий случай</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="print-carcass__footer">
+                <div class="print-carcass__footer_loss">
+                    <h1>Вы потеряли или у вас нет держателя для бэйджика?</h1>
+                    <p class="print-carcass__footer_loss-guide">
+                        Подойдите к своему руководителю или его заместителю по этому вопросу.
+                        Если вы потеряли свой, то вам придется заплатить 500₽*, чтобы вам выдали новый.
+                    </p>
+                </div>
+                <div class="print-carcass__footer_cheat">
+                    <h1>Внимание! Указывайте только настоящие данные</h1>
+                    <p class="print-carcass__footer_cheat-guide">
+                        Если это требование будет проигнорировано, то нам придется вам выписать штраф
+                        в размере 500₽. Всё, что вы вводите, записывается.
+                    </p>
+                    <span>*цена одного держателя обходится нам именно в эту сумму</span>
+                </div>
+            </div>
+    
+        </div>
+
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

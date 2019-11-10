@@ -1,0 +1,328 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Muller";
+  src: url("../font/Fontfabric - MullerMedium.otf"); }
+
+@font-face {
+  font-family: "TTCommons";
+  src: url("../font/TTCommons-Bold.ttf"); }
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-print-color-adjust: exact; }
+  *:before, *:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-print-color-adjust: exact; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.badge-carcass {
+  max-width: 794px;
+  padding: 47px 78px 0px 35px;
+  height: 650px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif; }
+
+.badge__header_head {
+  font-size: 24px;
+  font-weight: 600; }
+
+.badge__header_descr {
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  margin-top: 21px;
+  max-width: 413px;
+  line-height: 16px; }
+  .badge__header_descr span {
+    color: red; }
+
+.badge-carcass__container {
+  margin-top: 33px;
+  display: flex;
+  justify-content: space-between; }
+
+.creation_container {
+  max-width: 320px;
+  border: 1px solid #F2F2F2;
+  box-sizing: border-box; }
+
+.creation_name input {
+  padding: 14px 0 15px 11px;
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  color: #2D2D2D;
+  display: block; }
+
+.creation_name input::placeholder {
+  color: #BDBDBD; }
+
+.color {
+  color: #BDBDBD; }
+
+.creation_name-error {
+  display: none;
+  align-items: center;
+  margin-top: 6px; }
+  .creation_name-error span {
+    background: url(../img/large_name.svg) no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    display: inline-block; }
+  .creation_name-error div {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 14px;
+    line-height: 12px;
+    color: #FF4D4D; }
+
+.error {
+  display: flex; }
+
+.creation_select {
+  padding: 14px 0 15px 11px;
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  -webkit-appearance: none;
+  color: #2D2D2D;
+  width: 100%; }
+  .creation_select option {
+    background: #F2F2F2;
+    padding: 10px; }
+
+.passive-down {
+  background: url("../img/Vector-down.svg") no-repeat 95% center; }
+
+.active-up {
+  background: url("../img/Vector-up.svg") no-repeat 95% center; }
+
+.creation_post {
+  margin-top: 37px; }
+
+.creation_brand {
+  margin-top: 37px;
+  display: none; }
+
+.creation_warn {
+  max-width: 310px;
+  margin-top: 29px; }
+
+.creation_warn-header {
+  font-weight: 600; }
+
+.creation_warn-exception {
+  margin-top: 25px;
+  line-height: 16px; }
+  .creation_warn-exception span {
+    color: #159915; }
+
+.result_badge {
+  width: 297px;
+  padding: 19.51px 0 0 19.31px;
+  border: 0.25px solid #F2F2F2;
+  border-bottom: 2mm solid #E10718; }
+
+.result_brand-logo {
+  background: url(../img/05.svg) no-repeat;
+  width: auto;
+  height: 8mm; }
+
+.result_badge-custom {
+  margin-top: 26.38px; }
+
+.result_badge-custom-post {
+  color: #BDBDBD;
+  font-size: 14px;
+  font-family: Muller; }
+
+.result_badge-custom-name {
+  font-family: TTCommons;
+  font-size: 48px;
+  color: #BDBDBD;
+  line-height: 12mm;
+  margin-top: 4.08px; }
+
+.result_badge-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px; }
+  .result_badge-action span {
+    color: #BDBDBD;
+    font-size: 13px; }
+  .result_badge-action .print {
+    width: 137px;
+    padding: 9px 0 10px 0;
+    opacity: .5;
+    font-size: 13px;
+    color: white;
+    background: #46CD80; }
+
+.result_badge-action-explain {
+  background: url(../img/ctrlp.svg) no-repeat;
+  background-size: contain;
+  width: 78px;
+  height: 27px; }
+
+/* print instance styles */
+.print-carcass {
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif; }
+
+.print-carcass__overview {
+  padding: 16mm 0 20mm 16mm;
+  flex: 1; }
+
+.print-carcass__header h1 {
+  font-size: 8.47mm;
+  font-weight: 600; }
+
+.print-carcass__header_rule {
+  font-size: 4.23mm;
+  margin-top: 9mm;
+  max-width: 112.08mm; }
+
+.print-preview {
+  margin-top: 18mm; }
+
+.print-preview_additional {
+  display: flex;
+  align-items: center; }
+
+.print-preview_additional-second {
+  margin-left: 22mm; }
+  .print-preview_additional-second h1 {
+    font-weight: 600;
+    font-size: 7.41mm;
+    line-height: 28px; }
+
+.print-preview_additional-second-warn {
+  font-size: 4.23mm;
+  line-height: 15px;
+  text-align: center;
+  margin-top: 6mm; }
+
+.print-preview__item {
+  margin-bottom: 19px;
+  position: relative; }
+  .print-preview__item::after {
+    content: "";
+    background: url(../img/Line.svg);
+    position: absolute;
+    width: 106mm;
+    height: 1px;
+    bottom: -9px;
+    left: 0; }
+  .print-preview__item::before {
+    content: "";
+    background: url(../img/scissors.svg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 11.289mm;
+    height: 8.114mm;
+    left: 95mm;
+    bottom: -7px; }
+
+.print-preview .result_badge {
+  padding: 6mm 0 0 4.11mm;
+  width: 75mm;
+  height: 40mm; }
+
+.print-preview .result_brand-logo {
+  margin-left: .467mm; }
+
+.print-preview_badge-custom {
+  margin-top: 7mm; }
+
+.print-preview_custom-post {
+  font-size: 3.533mm;
+  font-family: "Muller";
+  margin-left: .522mm; }
+
+.print-preview_custom-name {
+  font-size: 12.35mm;
+  font-weight: bold;
+  font-family: "TTCommons";
+  color: #2D2D2D;
+  line-height: 7.35mm;
+  margin-top: 3.6mm; }
+
+.print-carcass__footer {
+  background: #F2F2F2;
+  flex: 1;
+  padding: 5mm 0 20mm 16mm; }
+
+.print-carcass__footer h1 {
+  font-size: 5.29mm;
+  font-weight: 600; }
+
+.print-carcass__footer_loss-guide {
+  margin-top: 6.5mm;
+  font-size: 3.53mm;
+  max-width: 141.662mm;
+  line-height: 15px; }
+
+.print-carcass__footer_cheat-guide {
+  margin-top: 6.5mm;
+  font-size: 3.53mm;
+  max-width: 138.756mm;
+  line-height: 15px; }
+
+.print-carcass__footer_cheat {
+  margin-top: 13mm; }
+  .print-carcass__footer_cheat h1 {
+    font-size: 18px;
+    font-weight: 600; }
+
+.print-carcass__footer_cheat span {
+  display: inline-block;
+  margin-top: 12mm; }
+
+@media print {
+  /* Стиль для печати */
+  @page {
+    margin: 0mm !important; }
+  body * {
+    visibility: hidden; }
+  .badge-carcass {
+    display: none !important; }
+  .print-carcass, .print-carcass * {
+    visibility: visible; }
+  /* Блок который нужно отобразить */
+  .print-carcass {
+    display: flex !important;
+    visibility: visible !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; } }
+
+/*# sourceMappingURL=style.css.map */
