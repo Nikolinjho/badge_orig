@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="badge-carcass">
@@ -19,7 +22,7 @@
          <div class="badge-carcass__container container">
              <div class="creation">
                 <div class="creation_name creation_container">
-                    <input type="text" name="person-name" class="print-name" placeholder="Солнце">
+                    <input type="text" name="person-name" maxlength="15" class="print-name" placeholder="Ваше имя">
                 </div>
                 <div class="creation_name-error">
                     <span></span>
@@ -27,7 +30,7 @@
                 </div>
                 <div class="creation_post creation_container">
                     <select class= " creation_select post-changer passive-down" name="" id="">
-                        <option value="Выберите из списка">Выберите из списка</option>
+                        <option value="Выберите из списка" selected disabled="disabled" >Выберите должность</option>
                         <option value="Менеджер">Менеджер</option>
                         <option value="Кассир">Кассир</option>
                         <option value="Мерчендайзер">Мерчендайзер</option>
@@ -36,7 +39,7 @@
                 </div>
                 <div class="creation_brand creation_container ">
                         <select class="creation_select brand-changer passive-down" name="" id="">
-                            <option value="Выберите из списка">Выберите из списка</option>
+                            <option value="Выберите из списка">Выберите бренд</option>
                             <option value="Dyson">Dyson</option>
                             <option value="Huawei">Huawei</option>
                             <option value="LG">LG</option>
@@ -61,12 +64,13 @@
                     <div class="result_brand-logo"></div>
                     <div class="result_badge-custom">
                         <div class="result_badge-custom-post">Должность</div>
-                        <div class="result_badge-custom-name">Солнце</div>
+                        <div class="result_badge-custom-name">Ваше имя</div>
                     </div>                   
                 </div>
                 <div class="result_badge-action">
-                        <button class="download" disabled="disabled" >Скачать</button>
                         <button class="print" disabled="disabled" >Напечатать</button>
+                        <span>или</span>
+                        <div class="result_badge-action-explain"></div>
                     </div>
              </div>
          </div>
@@ -85,7 +89,7 @@
                             <div class="result_brand-logo"></div>
                             <div class="print-preview_badge-custom">
                                 <div class="print-preview_custom-post">Должность</div>
-                                <div class="print-preview_custom-name">Солнце</div>
+                                <div class="print-preview_custom-name">Ваше имя</div>
                             </div>                   
                     </div>
                     <div class="print-preview_additional">
@@ -94,7 +98,7 @@
                                     <div class="result_brand-logo"></div>
                                     <div class="print-preview_badge-custom">
                                         <div class="print-preview_custom-post">Должность</div>
-                                        <div class="print-preview_custom-name">Солнце</div>
+                                        <div class="print-preview_custom-name">Ваше имя</div>
                                     </div>                   
                                 </div>
             
@@ -102,7 +106,7 @@
                                     <div class="result_brand-logo"></div>
                                     <div class="print-preview_badge-custom">
                                         <div class="print-preview_custom-post">Должность</div>
-                                        <div class="print-preview_custom-name">Солнце</div>
+                                        <div class="print-preview_custom-name">Ваше имя</div>
                                     </div>                   
                                 </div>
                         </div>
