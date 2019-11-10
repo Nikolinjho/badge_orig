@@ -60,7 +60,8 @@ $(document).ready(function(){
         else{
             $(".creation_brand").hide();
             $(".result_badge, .result_brand-logo").removeAttr("style");
-            // $(".result_badge-custom-name, .print-preview_custom-name").css("color", "#2D2D2D");
+            if ($(".result_badge-custom-name").text() === "Ваше имя")
+                $(".result_badge-custom-name, .print-preview_custom-name").css("color", "#BDBDBD");
         }
         enableBtn();
     })
@@ -68,6 +69,7 @@ $(document).ready(function(){
     $(".brand-changer").on("change", function(){     // choose brand
         $(this).children()
         let brand = $(this).children("option:selected").val();          // brand value
+        
         switch (brand) {
                 case "Dyson":
                     $(".print-preview .result_brand-logo").css({
@@ -153,11 +155,6 @@ $(document).ready(function(){
                                             $(".print-preview_custom-name").css("color", "#2D2D2D")
                                             break;
 
-            // default:
-            //     brand = "05";           // else set default logo and post
-            //     $(".result_badge").removeAttr("style");
-            //     $(".result_badge-custom-name").removeAttr("style");
-            //     break;
             }
             $(".result_brand-logo").css("background-image", `url(./img/brands/${brand}.svg)`)
             enableBtn();
