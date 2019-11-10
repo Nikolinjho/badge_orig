@@ -1,9 +1,20 @@
 $(document).ready(function(){
 
     let combine = false;            // check for printing
-
+    let container = $("");
     $(".creation_container > select").on("click", function(e){          // change arrow of selector
         $(this).toggleClass("active-up passive-down");
+        container = $(this);
+    });
+
+    $(document).click(function(e) {
+        // var container = $("YOUR CONTAINER SELECTOR");
+        console.log(container)
+        if (container.hasClass("active-up"))
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                console.log(1)
+                container.toggleClass("active-up passive-down");
+            }
     });
 
 
@@ -39,15 +50,7 @@ $(document).ready(function(){
     })
 
     $(".post-changer").on("change", function(){     // choose  post
-        let post = $(this).children("option:selected").val();
-        // if (post === "Выберите из списка"){             // if post doesnt choose set default styles and text
-        //     $(".result_badge-custom-post, .print-preview_custom-post").text("Должность");    
-        //     $(".result_badge-custom-post").css("color", "#BDBDBD");
-        //     $(".result_brand-logo").css("background-image", "url(./img/05.svg)");
-        //     $(".result_badge, .result_badge-custom-name, .result_brand-logo, .print-preview .result_badge-custom").removeAttr("style");
-        // }
-        // else{
-        // }
+        let post = $(this).children("option:selected").val();       // selected post
         $(".result_badge-custom-post, .print-preview_custom-post").text(post);
         $(".result_badge-custom-post").css("color", "#2D2D2D");
 
