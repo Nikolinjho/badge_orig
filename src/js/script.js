@@ -185,17 +185,17 @@ $(document).ready(function(){
     function enableBtn(){                   // enabling/disabling buttons
   
         if ( $(".print-name").val() !== "" && $(".post-changer").children("option:selected").val() !== "Выберите из списка" && $(".creation_brand").css("display") === "none" ){
-            $(".download, .print").attr("disabled", false). css("opacity", "1");            // enable
+            $(".print").attr("disabled", false). css("opacity", "1");            // enable
             combine = true;
         }
         else
         {             // if 
-            if ( $(".post-changer").children("option:selected").val() === "Эксперт"  && $(".brand-changer").children("option:selected").val() !== "Выберите из списка"  ){
-                $(".download, .print").attr("disabled", false). css("opacity", "1");
+            if ( $(".post-changer").children("option:selected").val() === "Эксперт"  && $(".brand-changer").children("option:selected").val() !== "Выберите из списка" && $(".print-name").val() !== "" ){
+                $(".print").attr("disabled", false). css("opacity", "1");
                 combine = true;
             }
             else{
-                $(".download, .print").attr("disabled", true). css("opacity", ".5");                // disable
+                $(".print").attr("disabled", true). css("opacity", ".5");                // disable
                 combine = false;
             }
         }
