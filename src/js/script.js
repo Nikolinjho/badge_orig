@@ -51,7 +51,7 @@ $(document).ready(function(){
         let post = $(this).children("option:selected").val();       // selected post
         $(".result_badge-custom-post, .print-preview_custom-post").text(post);
         $(".result_badge-custom-post").css("color", "#2D2D2D");
-        $(".print-preview_custom-name").css("color", "#2D2D2D");
+        $(".print-preview_custom-name, .result_badge-custom-name").css("color", "#2D2D2D");
 
         if (post === "Эксперт"){            // if post эксперт, open additional selector
             $(".creation_brand").show();
