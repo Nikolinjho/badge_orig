@@ -9,10 +9,8 @@ $(document).ready(function(){
     });
 
     $(document).click(function(e) {                 // click outside to change arrow of selector
-        console.log(container)
         if (container.hasClass("active-up"))
             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                console.log(1)
                 container.toggleClass("active-up passive-down");
             }
     });
