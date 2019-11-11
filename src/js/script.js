@@ -2,13 +2,13 @@ $(document).ready(function(){
 
     let combine = false;            // check for printing
     let container = $("");
-    $(".creation_container > select").on("click", function(e){          // change arrow of selector
+
+    $(".creation_container > select").on("click", function(e){          // click inside change arrow of selector
         $(this).toggleClass("active-up passive-down");
         container = $(this);
     });
 
-    $(document).click(function(e) {
-        // var container = $("YOUR CONTAINER SELECTOR");
+    $(document).click(function(e) {                 // click outside to change arrow of selector
         console.log(container)
         if (container.hasClass("active-up"))
             if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -53,6 +53,7 @@ $(document).ready(function(){
         let post = $(this).children("option:selected").val();       // selected post
         $(".result_badge-custom-post, .print-preview_custom-post").text(post);
         $(".result_badge-custom-post").css("color", "#2D2D2D");
+        $(".print-preview_custom-name").css("color", "#2D2D2D");
 
         if (post === "Эксперт"){            // if post эксперт, open additional selector
             $(".creation_brand").show();
@@ -60,8 +61,9 @@ $(document).ready(function(){
         else{
             $(".creation_brand").hide();
             $(".result_badge, .result_brand-logo").removeAttr("style");
-            if ($(".result_badge-custom-name").text() === "Ваше имя")
+            if ($(".result_badge-custom-name").text() === "Ваше имя"){
                 $(".result_badge-custom-name, .print-preview_custom-name").css("color", "#BDBDBD");
+            }
         }
         enableBtn();
     })
@@ -155,6 +157,9 @@ $(document).ready(function(){
                                             $(".print-preview_custom-name").css("color", "#2D2D2D")
                                             break;
 
+            }
+            if ($(".result_badge-custom-name").text() === "Ваше имя" ){
+                $(".result_badge-custom-name").css("color", "#BDBDBD");
             }
             $(".result_brand-logo").css("background-image", `url(./img/brands/${brand}.svg)`)
             enableBtn();

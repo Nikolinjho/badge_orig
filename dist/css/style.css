@@ -59,7 +59,7 @@ html, body {
   justify-content: space-between; }
 
 .creation_container {
-  max-width: 320px;
+  width: 320px;
   border: 1px solid #F2F2F2;
   box-sizing: border-box; }
 
