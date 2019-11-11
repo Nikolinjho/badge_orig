@@ -420,7 +420,7 @@
   @media print {
     /* Стиль для печати */
     @page { 
-      margin: 0mm !important; 
+      margin: 0 !important; 
     }
     body * {
       visibility: hidden;
