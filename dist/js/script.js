@@ -1,11 +1,20 @@
 $(document).ready(function(){
 
     let combine = false;            // check for printing
+    let container = $("");
 
-
-    $(".creation_container > select").on("click", function(){
+    $(".creation_container > select").on("click", function(e){          // click inside change arrow of selector
         $(this).toggleClass("active-up passive-down");
+        container = $(this);
     });
+
+    $(document).click(function(e) {                 // click outside to change arrow of selector
+        if (container.hasClass("active-up"))
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                container.toggleClass("active-up passive-down");
+            }
+    });
+
 
     $(".print-name").on("keyup", function(){       // choose name   
         let name = $(this).val();
@@ -15,7 +24,7 @@ $(document).ready(function(){
             $(".print-preview_custom-name").css("font-size", "10.58mm");
         }
         else
-             if ( name.length >= 10 ){
+             if ( name.length >= 10 ){                                      // styles for namelength >= 10 simb
                 $(".result_badge-custom-name").css("font-size", "30px");    
                 $(".print-preview_custom-name").css("font-size", "8.82mm");
              }
@@ -24,45 +33,56 @@ $(document).ready(function(){
                 $(".print-preview_custom-name").css("font-size", "12.35mm");
              }
              
-        if ( $(this).val() !== ""){ 
-            $(".result_badge-custom-name, .print-preview_custom-name").text(name);
+        if ( $(this).val() !== ""){             
+            $(".result_badge-custom-name, .print-preview_custom-name").text(name);                  // get name to badge
         } 
         else{
             $(".result_badge-custom-name, .print-preview_custom-name").text("Ваше имя");
             $(".result_badge-custom-name").removeAttr("style");
         }
-        if (name.length > 14)
+        if (name.length > 14)                                       // error if namelength > 14 simb
             $(".creation_name-error").addClass("error");
         else
             $(".creation_name-error").removeClass("error");
         enableBtn();
     })
 
+
+
     $(".post-changer").on("change", function(){     // choose  post
-        let post = $(this).children("option:selected").val();
-        if (post === "Выберите из списка"){             // if post doesnt choose set default styles and text
-            $(".result_badge-custom-post, .print-preview_custom-post").text("Должность");    
-            $(".result_badge-custom-post").css("color", "#BDBDBD");
-            $(".result_brand-logo").css("background-image", "url(./img/05.svg)");
-            $(".result_badge, .result_badge-custom-name, .result_brand-logo, .print-preview .result_badge-custom").removeAttr("style");
+        let post = $(this).children("option:selected").val();       // selected post
+        $(".result_badge-custom-post, .print-preview_custom-post").text(post);
+        $(".result_badge-custom-post").css("color", "#2D2D2D");
+        if ($(".result_badge-custom-name").text() !== "Ваше имя"){
+            $(".print-preview_custom-name, .result_badge-custom-name").css("color", "#2D2D2D");
+        }
+        if ( post === "Приёмщик" || post === "Специалист"){                             // set special styles for Intellect
+            $(".result_brand-logo").css("background-image", "url(./img/Intellect.svg)");
+            $(".result_badge").css("border-bottom-color", "#379CD1");
+            $(".result_badge-custom-name").css("color", "#379CD1");
+            $(".print-preview_custom-name").css("color", "#379CD1");
         }
         else{
-            $(".result_badge-custom-post, .print-preview_custom-post").text(post);
-            $(".result_badge-custom-post").css("color", "#2D2D2D");
+            $(".print-preview .result_brand-logo").removeAttr("style");
+            $(".result_brand-logo").css("background-image", "url(./img/05.svg)");
+            $(".result_badge").css("border-bottom-color", "#E10718");
         }
-
-        if (post === "Эксперт"){
+        if (post === "Эксперт"){            // if post эксперт, open additional selector
             $(".creation_brand").show();
         }
         else{
             $(".creation_brand").hide();
-            
+            if ($(".result_badge-custom-name").text() === "Ваше имя"){
+                $(".result_badge-custom-name, .print-preview_custom-name").css("color", "#BDBDBD");
+            }
         }
         enableBtn();
     })
 
     $(".brand-changer").on("change", function(){     // choose brand
-        let brand = $(this).children("option:selected").val();
+        $(this).children()
+        let brand = $(this).children("option:selected").val();          // brand value
+        
         switch (brand) {
                 case "Dyson":
                     $(".print-preview .result_brand-logo").css({
@@ -72,6 +92,7 @@ $(document).ready(function(){
                         "margin-top": "7mm"
                     })
                     $(".result_badge").css("border-bottom-color", "#2D2D2D");
+                    $(".result_badge-custom-name").css("color", "#2D2D2D");
                     $(".print-preview_custom-name").css("color", "#2D2D2D");
                     break;
 
@@ -83,6 +104,7 @@ $(document).ready(function(){
                                 "margin-top": "7mm"
                             });
                         $(".result_badge").css("border-bottom-color", "#E52428");
+                        $(".result_badge-custom-name").css("color", "#E52428");
                         $(".print-preview_custom-name").css("color", "#E52428");
                         break;
 
@@ -94,6 +116,7 @@ $(document).ready(function(){
                                     "margin-top": "7mm"
                                 });
                             $(".result_badge").css("border-bottom-color", "#C3004D");
+                            $(".result_badge-custom-name").css("color", "#C3004D");
                             $(".print-preview_custom-name").css("color", "#C3004D");
                             break;
 
@@ -105,6 +128,7 @@ $(document).ready(function(){
                                         "margin-top": "7mm"
                                     });
                                 $(".result_badge").css("border-bottom-color", "#1EA366");
+                                $(".result_badge-custom-name").css("color", "#1EA366");
                                 $(".print-preview_custom-name").css("color", "#1EA366");
                                 break;
 
@@ -115,8 +139,9 @@ $(document).ready(function(){
                                         $(".print-preview_badge-custom").css({
                                             "margin-top": "9mm"
                                         });
-                                    $(".result_badge").css("border-bottom-color", "#0B5ED7")
-                                    $(".print-preview_custom-name").css("color", "#0B5ED7")
+                                    $(".result_badge").css("border-bottom-color", "#0B5ED7");
+                                    $(".result_badge-custom-name").css("color", "#0B5ED7");
+                                    $(".print-preview_custom-name").css("color", "#0B5ED7");
                                     break;
 
                                     case "Samsung":
@@ -127,6 +152,7 @@ $(document).ready(function(){
                                                 "margin-top": "9mm"
                                             })
                                         $(".result_badge").css("border-bottom-color", "#1E4BC6")
+                                        $(".result_badge-custom-name").css("color", "#1E4BC6");
                                         $(".print-preview_custom-name").css("color", "#1E4BC6")
                                         break;
                                         
@@ -138,70 +164,53 @@ $(document).ready(function(){
                                                     "margin-top": "9mm"
                                                 })
                                             $(".result_badge").css("border-bottom-color", "#2D2D2D")
+                                            $(".result_badge-custom-name").css("color", "#2D2D2D");
                                             $(".print-preview_custom-name").css("color", "#2D2D2D")
                                             break;
 
-            default:
-                brand = "05";           // else set default logo and post
-                $(".result_badge").removeAttr("style");
-                $(".result_badge-custom-name").removeAttr("style");
-                break;
+            }
+            if ($(".result_badge-custom-name").text() === "Ваше имя" ){
+                $(".result_badge-custom-name").css("color", "#BDBDBD");
             }
             $(".result_brand-logo").css("background-image", `url(./img/brands/${brand}.svg)`)
             enableBtn();
 
     })
 
-    
-    // function toEnableKeyCombine(combine){
-    //     $(document).on('keydown', function(e) {
-    //         if ()
-    //         if(e.ctrlKey && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80) ){
-    //             alert("Please use the Print PDF button below for a better rendering on the document");
-    //             e.cancelBubble = true;
-    //             e.preventDefault();
-    //             e.stopImmediatePropagation();
-    //         }  
-    //     });
-    // }
 
 
     $(document).on('keydown', function(e) {
         if(e.ctrlKey && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80) ){
             if (combine){
-                console.log(1)
-                // window.print();
             }
             else{
-                console.log(2)
                 alert("Пожалуйста, заполните необходимые поля!");
                 e.preventDefault();
-                e.cancelBubble = true;
-                e.stopImmediatePropagation();
+                // e.cancelBubble = true;
+                // e.stopImmediatePropagation();
             }
         }  
     });
 
-
     $(".print").click(function(){           //print page
-        window.print();                    
+            window.print();       
     })
 
 
     function enableBtn(){                   // enabling/disabling buttons
   
         if ( $(".print-name").val() !== "" && $(".post-changer").children("option:selected").val() !== "Выберите из списка" && $(".creation_brand").css("display") === "none" ){
-            $(".download, .print").attr("disabled", false). css("opacity", "1");            // enable
+            $(".print").attr("disabled", false). css("opacity", "1");            // enable
             combine = true;
         }
         else
         {             // if 
-            if ( $(".post-changer").children("option:selected").val() === "Эксперт"  && $(".brand-changer").children("option:selected").val() !== "Выберите из списка"  ){
-                $(".download, .print").attr("disabled", false). css("opacity", "1");
+            if ( $(".post-changer").children("option:selected").val() === "Эксперт"  && $(".brand-changer").children("option:selected").val() !== "Выберите из списка" && $(".print-name").val() !== "" ){
+                $(".print").attr("disabled", false). css("opacity", "1");
                 combine = true;
             }
             else{
-                $(".download, .print").attr("disabled", true). css("opacity", ".5");                // disable
+                $(".print").attr("disabled", true). css("opacity", ".5");                // disable
                 combine = false;
             }
         }

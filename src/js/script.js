@@ -33,7 +33,7 @@ $(document).ready(function(){
                 $(".print-preview_custom-name").css("font-size", "12.35mm");
              }
              
-        if ( $(this).val() !== ""){ 
+        if ( $(this).val() !== ""){             
             $(".result_badge-custom-name, .print-preview_custom-name").text(name);                  // get name to badge
         } 
         else{
@@ -47,18 +47,31 @@ $(document).ready(function(){
         enableBtn();
     })
 
+
+
     $(".post-changer").on("change", function(){     // choose  post
         let post = $(this).children("option:selected").val();       // selected post
         $(".result_badge-custom-post, .print-preview_custom-post").text(post);
         $(".result_badge-custom-post").css("color", "#2D2D2D");
-        $(".print-preview_custom-name, .result_badge-custom-name").css("color", "#2D2D2D");
-
+        if ($(".result_badge-custom-name").text() !== "Ваше имя"){
+            $(".print-preview_custom-name, .result_badge-custom-name").css("color", "#2D2D2D");
+        }
+        if ( post === "Приёмщик" || post === "Специалист"){                             // set special styles for Intellect
+            $(".result_brand-logo").css("background-image", "url(./img/Intellect.svg)");
+            $(".result_badge").css("border-bottom-color", "#379CD1");
+            $(".result_badge-custom-name").css("color", "#379CD1");
+            $(".print-preview_custom-name").css("color", "#379CD1");
+        }
+        else{
+            $(".print-preview .result_brand-logo").removeAttr("style");
+            $(".result_brand-logo").css("background-image", "url(./img/05.svg)");
+            $(".result_badge").css("border-bottom-color", "#E10718");
+        }
         if (post === "Эксперт"){            // if post эксперт, open additional selector
             $(".creation_brand").show();
         }
         else{
             $(".creation_brand").hide();
-            $(".result_badge, .result_brand-logo").removeAttr("style");
             if ($(".result_badge-custom-name").text() === "Ваше имя"){
                 $(".result_badge-custom-name, .print-preview_custom-name").css("color", "#BDBDBD");
             }
@@ -169,19 +182,18 @@ $(document).ready(function(){
     $(document).on('keydown', function(e) {
         if(e.ctrlKey && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80) ){
             if (combine){
-                window.print();
             }
             else{
                 alert("Пожалуйста, заполните необходимые поля!");
                 e.preventDefault();
-                e.cancelBubble = true;
-                e.stopImmediatePropagation();
+                // e.cancelBubble = true;
+                // e.stopImmediatePropagation();
             }
         }  
     });
 
     $(".print").click(function(){           //print page
-        window.print();       
+            window.print();       
     })
 
 

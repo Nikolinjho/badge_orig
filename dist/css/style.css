@@ -27,11 +27,15 @@ button {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    -webkit-print-color-adjust: exact; }
+    -webkit-print-color-adjust: exact;
+    color: none !important;
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important; }
 
 html, body {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 .badge-carcass {
   max-width: 794px;
@@ -192,7 +196,8 @@ html, body {
 /* print instance styles */
 .print-carcass {
   height: 100%;
-  display: none;
+  display: block;
+  visibility: hidden;
   flex-direction: column;
   font-size: 14px;
   font-family: "Roboto", sans-serif; }
@@ -309,20 +314,13 @@ html, body {
 @media print {
   /* Стиль для печати */
   @page {
-    margin: 0mm !important; }
-  body * {
-    visibility: hidden; }
+    padding: 0;
+    margin: 0; }
   .badge-carcass {
     display: none !important; }
-  .print-carcass, .print-carcass * {
-    visibility: visible; }
   /* Блок который нужно отобразить */
   .print-carcass {
-    display: flex !important;
-    visibility: visible !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%; } }
+    display: block !important;
+    visibility: visible; } }
 
 /*# sourceMappingURL=style.css.map */

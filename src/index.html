@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/reset.css" >
     <link rel="stylesheet" href="../dist/css/style.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> -->
@@ -24,7 +24,7 @@
                 <div class="creation_name creation_container">
                     <input type="text" name="person-name" maxlength="15" class="print-name" placeholder="Ваше имя">
                 </div>
-                <div class="creation_name-error">
+                <div class="creation_name-error"> 
                     <span></span>
                     <div>Имя не помещается в бэйджик</div>
                 </div>
@@ -34,12 +34,14 @@
                         <option value="Менеджер">Менеджер</option>
                         <option value="Кассир">Кассир</option>
                         <option value="Мерчендайзер">Мерчендайзер</option>
+                        <option value="Приёмщик">Приёмщик</option>
+                        <option value="Специалист">Специалист</option>
                         <option value="Эксперт">Эксперт</option>
                         </select>
                 </div>
                 <div class="creation_brand creation_container ">
                         <select class="creation_select brand-changer passive-down" name="" id="">
-                            <option value="Выберите из списка">Выберите бренд</option>
+                            <option value="Выберите из списка" selected disabled="disabled">Выберите бренд</option>
                             <option value="Dyson">Dyson</option>
                             <option value="Huawei">Huawei</option>
                             <option value="LG">LG</option>
@@ -47,7 +49,6 @@
                             <option value="Phillips">Phillips</option>
                             <option value="Samsung">Samsung</option>
                             <option value="Sony">Sony</option>
-                            
                         </select>
                     </div>
                 <div class="creation_warn">
